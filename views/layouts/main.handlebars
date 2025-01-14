@@ -18,9 +18,12 @@
     </header>
 
     {{{body}}}
-
-    <footer>
-      <p>© 2025 Min Webbplats</p>
-    </footer>
+<footer>
+    {{#each footerItems}}
+        <a href="{{this.link}}" class="footer-link{{#if this.active}} active{{/if}}">
+            {{this.label}}
+        </a>
+    {{/each}}
+</footer>
   </body>
 </html>

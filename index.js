@@ -21,5 +21,8 @@ app.get("/about", (req, res) => {
 app.get("/contact", (req, res) => {
   renderPage(res, "contact");
 });
+app.get("/content", (req, res) => {
+  renderPage(res, "content");
+});
 
 app.listen(3080, () => console.log("Server running on port 3080"));
