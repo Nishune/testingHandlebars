@@ -9,8 +9,11 @@
     <header>
       <h1>Min Webbplats</h1>
       <nav>
-        <a href="/">Hem</a>
-        <a href="/about">Om</a>
+       {{#each menuItems}}
+       <a href="{{this.link}}" {{#if this.active}}class="active"{{/if}}>
+       {{this.label}}
+       </a>
+       {{/each}}
       </nav>
     </header>
 

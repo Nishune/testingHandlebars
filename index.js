@@ -1,6 +1,6 @@
 import express from "express";
 import { engine } from "express-handlebars";
-
+import renderPage from "./lib/renderPage.js";
 const app = express();
 
 //konfigurera handlebars
@@ -13,15 +13,13 @@ app.use(express.static("public"));
 
 //Routes
 app.get("/", (req, res) => {
-  res.render("about", {
-    title: "Startsida",
-  });
+  renderPage(res, "index");
 });
-
 app.get("/about", (req, res) => {
-  res.render("about", {
-    title: "Om oss",
-  });
+  renderPage(res, "about");
+});
+app.get("/contact", (req, res) => {
+  renderPage(res, "contact");
 });
 
 app.listen(3080, () => console.log("Server running on port 3080"));
